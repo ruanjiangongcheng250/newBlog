@@ -54,4 +54,5 @@ export const ListItem = styled.div`
     background-repeat: no-repeat;
     background-size: 24px 20px;
     background-position: right;
+    color: #333;
 `;

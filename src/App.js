@@ -6,6 +6,9 @@ import Home from './pages/home';
 import Detail from './pages/detail';
 import Login from './pages/login';
 import My from './pages/my';
+import MyFavouriteArticles from './pages/myFavouriteArticles';
+import MyArticles from './pages/myArticles';
+import Publish from './pages/publish';
 class App extends Component {
   render() {
     return (
@@ -17,6 +20,9 @@ class App extends Component {
           <Route path="/my" exact component= {My}></Route>
           <Route path="/login" exact component= {Login}></Route>
           <Route path="/detail/:id" exact component= {Detail}></Route>
+          <Route path="/myArticles" exact component= {MyArticles}></Route>
+          <Route path="/publish" exact component= {Publish}></Route>
+          <Route path="/myFavouriteArticles" exact component= {MyFavouriteArticles}></Route>
           </div>
         </BrowserRouter>
       </Provider>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {my, myActive, home, homeActive, publish} from '../../statics/toolbar';
 import { connect } from 'react-redux';
+import cb from '../../util/cube';
+
 import { 
     ToolBarWraper,
     ToolBarItem
@@ -28,7 +30,7 @@ class ToolBar extends Component{
                         发布
                     </ToolBarItem>
                 </Link>
-                <Link to={ hasLogin ? "/my" : "/login"}>
+                <Link to={ cb.CookieParser.getCookie('name') ? "/my" : "/login"}>
                     <ToolBarItem className={currentBar === 'my' ? "active" : ""} >
                         <img src={currentBar === 'my' ? myActive : my} alt="" />
                         我的

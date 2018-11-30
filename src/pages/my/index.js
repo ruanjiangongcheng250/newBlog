@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { HomeWraper, AvatorContent, DataBord, List,ListItem } from './style';
 import ToolBar from '../../common/toolbar';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
+import cb from '../../util/cube';
 class My extends Component {
     constructor(props) {
         super(props);
         this.state = {
             userInfo : {}
+        }
+    }
+    componentWillMount() {
+        if(!cb.CookieParser.getCookie('name')){
+            this.props.history.push('/login');
         }
     }
     render() {
@@ -36,10 +42,10 @@ class My extends Component {
                     </div>
                 </DataBord>
                 <List>
-                    <ListItem>我的文章</ListItem>
-                    <ListItem>我喜欢的文章</ListItem>
-                    <ListItem>日记本</ListItem>
-                    <ListItem>设置</ListItem>
+                    <Link to="myArticles"><ListItem>我的文章</ListItem></Link>
+                    <Link to="myFavouriteArticles"><ListItem>我喜欢的文章</ListItem></Link>
+                    <Link to="note"><ListItem>日记本</ListItem></Link>
+                    <Link to="setting"><ListItem>设置</ListItem></Link>
                 </List>
                 <ToolBar currentBar='my'/>
             </HomeWraper>
