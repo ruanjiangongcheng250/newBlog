@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import './style';
-import { DetailWraper, Title, Content, Author } from './style';
+import { DetailWraper, Title, Content, Author, Comment, CommentList, CommentItem } from './style';
 import NavBar from '../../common/navbar';
 import BackToTop from '../../common/backToTop';
+import Item from 'antd-mobile/lib/popover/Item';
 
 class Detail extends Component {
     constructor(props) {
@@ -24,6 +25,25 @@ class Detail extends Component {
                     <Author>作者： { article.author }</Author>
                     <Content dangerouslySetInnerHTML={{__html: article.content}} />
                 </DetailWraper>
+                <Comment>
+                    <p className="title">评论</p>
+                    <CommentList>
+                        {
+                            article.comment && article.comment.map((item) => {
+                                return <CommentItem>
+                                    <img src={item.author_avator} alt=""/>
+                                    <div className='rightContent'>
+                                        <p className="nameAndTime">
+                                            <span className="name">{item.author}</span>
+                                            <span className="time">{item.time}</span>
+                                        </p>
+                                        <p className="content">{item.content}</p>
+                                    </div>
+                                </CommentItem>
+                            })
+                        }
+                    </CommentList>
+                </Comment>
                 <BackToTop  bottom={20}/> 
             </Fragment>
         )
