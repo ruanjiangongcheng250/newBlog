@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { LoginWraper } from './style';
-import axios from 'axios';
 import qs from 'qs';
-import { Toast } from 'antd-mobile';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 class Login extends Component{

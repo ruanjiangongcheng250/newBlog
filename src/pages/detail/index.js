@@ -29,7 +29,7 @@ class Detail extends Component {
                     <p className="title">评论</p>
                     <CommentList>
                         {
-                            article.comment && article.comment.map((item) => {
+                            article.comment && article.comment.length ? article.comment.map((item) => {
                                 return <CommentItem>
                                     <img src={item.author_avator} alt=""/>
                                     <div className='rightContent'>
@@ -40,7 +40,7 @@ class Detail extends Component {
                                         <p className="content">{item.content}</p>
                                     </div>
                                 </CommentItem>
-                            })
+                            }) : <p>暂无评论···</p>
                         }
                     </CommentList>
                 </Comment>

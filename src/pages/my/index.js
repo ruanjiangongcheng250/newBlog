@@ -44,7 +44,7 @@ class My extends Component {
                 <List>
                     <Link to="myArticles"><ListItem>我的文章</ListItem></Link>
                     <Link to="myFavouriteArticles"><ListItem>我喜欢的文章</ListItem></Link>
-                    <Link to="note"><ListItem>日记本</ListItem></Link>
+                    <Link to="private"><ListItem>日记本</ListItem></Link>
                     <Link to="setting"><ListItem>设置</ListItem></Link>
                 </List>
                 <ToolBar currentBar='my'/>
@@ -53,7 +53,7 @@ class My extends Component {
     }
 
     componentDidMount() {
-        axios.get('/php/user.php?userId=28').then(res=>{
+        axios.get('/php/user.php?userId=' + cb.CookieParser.getCookie('author_id')).then(res=>{
             this.setState({
                 userInfo: res.data
             })

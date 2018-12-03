@@ -9,7 +9,10 @@ export const DetailWraper = styled.div`
 `;
 
 export const Content = styled.div`
-
+    p {
+        line-height: 20px;
+        word-break: break-word;
+    }
 `;
 
 export const Title = styled.div`

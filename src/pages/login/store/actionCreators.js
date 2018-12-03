@@ -15,7 +15,7 @@ export const handleLogin = (name, password, props)=>{
             if(res.data.code === 200){
                 dispatch({type: constants.HANDLE_LOGIN, hasLogin: true})
                 props.history.push('/home');
-                Toast.success('登录成功');
+                Toast.success('登录成功', 1);
             }else{
                 Toast.fail('用户名或者密码错误');
             }

@@ -9,6 +9,8 @@ import My from './pages/my';
 import MyFavouriteArticles from './pages/myFavouriteArticles';
 import MyArticles from './pages/myArticles';
 import Publish from './pages/publish';
+import Private from './pages/private';
+import Setting from './pages/setting';
 class App extends Component {
   render() {
     return (
@@ -23,6 +25,8 @@ class App extends Component {
           <Route path="/myArticles" exact component= {MyArticles}></Route>
           <Route path="/publish" exact component= {Publish}></Route>
           <Route path="/myFavouriteArticles" exact component= {MyFavouriteArticles}></Route>
+          <Route path="/private" exact component= {Private}></Route>
+          <Route path="/setting" exact component= {Setting}></Route>
           </div>
         </BrowserRouter>
       </Provider>

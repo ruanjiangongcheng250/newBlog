@@ -102,7 +102,7 @@ class ArticleList extends Component {
                                     <ListInfo>
                                         <h3 className="title">{item.name}</h3>
                                         <p className="desc">{item.description}</p>
-                                        <p className="info">
+                                        {this.state.articleType !== 'private' && <p className="info">
                                             <span>
                                                 <img src={watch} alt=""/>
                                                 {item.watch}
@@ -115,7 +115,7 @@ class ArticleList extends Component {
                                                 <img src={like} alt=""/>
                                                 {item.support}
                                             </span> */}
-                                        </p>
+                                        </p>}
                                     </ListInfo>
                                 </ListItem>
                             </Link>
@@ -150,6 +150,14 @@ class ArticleList extends Component {
                 Toast.hide();
                 this.setState({
                     listData: res.data && res.data.articles
+                });
+            })
+            break;
+            case 'private':
+            axios.get('/php/user.php?userId=' + cb.CookieParser.getCookie('author_id')).then(res=>{
+                Toast.hide();
+                this.setState({
+                    listData: res.data && res.data.notes
                 });
             })
             break;
