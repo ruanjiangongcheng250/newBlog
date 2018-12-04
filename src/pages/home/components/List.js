@@ -3,6 +3,7 @@ import { ListWraper, ListItem, ListInfo } from '../style';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { comments, like, watch } from '../../../statics/common';
+import { Toast } from 'antd-mobile';
 class List extends Component {
     constructor(props) {
         super(props);
@@ -75,6 +76,7 @@ class List extends Component {
 
         }
         axios.get('/php/index.php?type='+ type +'&keyword=').then(res=>{
+            Toast.hide();
             this.setState({
                 listData: res.data
             });
