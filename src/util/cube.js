@@ -26,4 +26,20 @@ cb.CookieParser = {
     }
 };
 
+// 日期输出YYYY-MM-DD
+cb.formatDate = (datetime) => {
+    var date0 = new Date(datetime);
+    var year = date0.getFullYear();
+    var month = date0.getMonth() + 1;//js从0开始取
+    var date = date0.getDate();
+    if (month < 10) {
+        month = "0" + month;
+    }
+    if (date < 10) {
+        date = "0" + date;
+    }
+    var time = year + "-" + month + "-" + date;
+    return time;
+}
+
 export default cb;

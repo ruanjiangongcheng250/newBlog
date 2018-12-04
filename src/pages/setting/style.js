@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const SettingWrap  = styled.div`
     background: white;
-    overflow: hidden;
-    height: 100vh;
+    height: 100%;
 `;
 
 export const SettingContent = styled.div`
