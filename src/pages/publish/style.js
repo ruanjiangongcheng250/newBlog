@@ -19,7 +19,7 @@ export const  PublishContent = styled.div`
     }
     .content {
         width: 100%;
-        height: calc(100vh - 93px);
+        height: calc(100vh - 100px);
         textarea {
             padding-top: 10px;
             border: none;
