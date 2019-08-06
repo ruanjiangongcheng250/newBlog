@@ -26,7 +26,7 @@ class Home extends Component {
     }
     render() {
         const tabs = [
-            { title: '推荐' },
+            { title: '推荐123' },
             { title: '文章' },
             { title: '养生' },
             { title: '健身' },
